@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHackZ
 // @match        https://www.youtube.com/*
