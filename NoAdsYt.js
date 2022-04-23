@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHackZ
 // @match        https://www.youtube.com/*
@@ -31,6 +31,11 @@ setInterval(function(){
             sideAd.style.display="none";
             //console.log("side ad removed!")
         }
+        if(document.getElementsByClassName("style-scope ytd-item-section-renderer sparkles-light-cta")[0]!==undefined){
+            let sideAd_ = document.getElementsByClassName("style-scope ytd-item-section-renderer sparkles-light-cta")[0];
+            sideAd_.style.display="none";
+            //console.log("side ad removed!")
+        }
         if(document.getElementsByClassName("ytp-ad-text ytp-ad-skip-button-text")[0]!==undefined){
             let skipBtn=document.getElementsByClassName("ytp-ad-text ytp-ad-skip-button-text")[0];
             skipBtn.click();
@@ -54,4 +59,4 @@ setInterval(function(){
             }
         }
     }
-},50)
+},100)
