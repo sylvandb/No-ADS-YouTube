@@ -11,6 +11,7 @@ Skips all youtube ads  |  undetectable | skips ads instantly
 
 <h3>Key points:</h3>
 <ul style="margin-bottom:10px;">
+  <li>Works on sites with embedded youtube videos 😁</li><br>
   <li>This skips all types of ads & It skips instantly!! 😲</li><br>
   <li>This removes ads that come on the side and removes the incoming ad alert. 🙌</li><br>
   <li>This skips unskippable ads by speeding up the video to a maximum playback rate of 16, (default 1) 💨</li><br>
