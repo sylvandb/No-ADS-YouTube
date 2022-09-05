@@ -1,5 +1,5 @@
 # No-ADS-YouTube 🥳
-Skips all youtube ads  |  undetectable | skips ads instantly
+Skips all youtube ads  |  removes banner and sidebar ads | skips ads instantly
 
 <h3>Steps for use: </h3>
 <ol style="margin-bottom:10px;">
