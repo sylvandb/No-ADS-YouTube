@@ -21,6 +21,6 @@ Skips all youtube ads  |  removes banner and sidebar ads | skips ads instantly
 </ul>
 <h3>Please consider:</h3>
 <ul>
-<li>Youtube:  <a style="color:red;" target="_Blank" href="https://www.youtube.com/channel/UCinBnZ2BKAbCKA1w9lmFd0w">Subscribe</a></li>
-<li>Instagram:  <a style="color:#dc2ef0;" target="_Blank" href="https://www.instagram.com/nyc.geahad.codes/">Follow</a></li>
+<li>Youtube:  <a style="color:red;" target="_Blank" href="https://www.youtube.com/channel/UColPwWTSv6884dHe5ipYL9g">Subscribe</a></li>
+<li>Instagram:  <a style="color:#dc2ef0;" target="_Blank" href="https://www.instagram.com/gsrhackz/">Follow</a></li>
 </ul>
