@@ -53,6 +53,7 @@ setInterval(function(){
             if(ad.children.length>0){
                 if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
                     vid.playbackRate=16;
+                    vid.muted=true;
                     //console.log("Incrementally skipped unskippable ad!")
                 }
             }
