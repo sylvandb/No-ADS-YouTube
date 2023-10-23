@@ -57,5 +57,19 @@ setInterval(function(){
                 }
             }
         }
+        if(document.getElementById("masthead-ad")!==null){
+            let headerAd=document.getElementById("masthead-ad");
+            headerAd.remove();
+            //console.log("Header ad on homepage removed!");
+        }
+        if(document.getElementsByTagName("ytd-ad-slot-renderer")[0]!==undefined){
+            let rightSideAd=document.getElementsByTagName("ytd-ad-slot-renderer")[0];
+            rightSideAd.remove();
+            //console.log("Ad above 'next video' on the right side removed!");
+        }
+        if(document.getElementsByTagName("ytd-reel-shelf-renderer")[0]!==undefined){
+            let rightSideShorts=document.getElementsByTagName("ytd-reel-shelf-renderer")[0];
+            rightSideShorts.remove();
+            //console.log("Shorts below 'next video' on the right side removed!");
     }
 },100)
