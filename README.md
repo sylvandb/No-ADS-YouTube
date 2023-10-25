@@ -1,6 +1,6 @@
 # No-ADS-YouTube 🥳
 
-<h2>I would like to welcome all the new comers. Didn't expect to suddenly get traction as I wrote this script 2 years ago, but nonetheless enjoy my shit project 😭😭<br></h2><br><br>
+<h3>I would like to welcome all the new comers. Didn't expect to suddenly get traction as I wrote this script 2 years ago, but nonetheless enjoy my shit project 😭😭<br></h3><br><br>
 
 Skips all youtube ads  |  removes banner and sidebar ads | skips ads instantly
 
@@ -25,5 +25,5 @@ Skips all youtube ads  |  removes banner and sidebar ads | skips ads instantly
 <h3>Please consider:</h3>
 <ul>
 <li>Youtube:  <a style="color:red;" target="_Blank" href="https://www.youtube.com/channel/UColPwWTSv6884dHe5ipYL9g">Subscribe</a></li>
-<li>Instagram:  <a style="color:#dc2ef0;" target="_Blank" href="https://www.instagram.com/gsrhackz/">Follow</a></li>
+<li>Instagram:  <a style="color:#dc2ef0;" target="_Blank" href="https://www.instagram.com/hax.gsr/">Follow</a></li>
 </ul>
