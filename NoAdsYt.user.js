@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.0.2
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
-// @homepage     https://github.com/di4b0lical/No-ADS-YouTube
+// @author       sylvandb
+// @homepage     https://github.com/sylvandb/No-ADS-YouTube
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
 // @icon         https://i.ibb.co/X5f50Cg/Screen-Shot-2021-07-19-at-9-31-54-PM.png
 // @grant        none
 // ==/UserScript==
+// heavily modified from original from https://github.com/di4b0lical/No-ADS-YouTube
 
 let removeLogo = true; // take out the youtube logo
 let pbRate = 2.2; // I like it fast
