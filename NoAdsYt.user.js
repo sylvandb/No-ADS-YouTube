@@ -12,7 +12,7 @@
 // ==/UserScript==
 
 let removeLogo = true; // take out the youtube logo
-let pbRate = 2; // I like it fast
+let pbRate = 2.2; // I like it fast
 let adpbRate = 16;
 let prevVid = undefined;
 
@@ -53,6 +53,10 @@ setInterval(()=>{
         } else {
             if(ad.children.length>0){
                 if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
+                    // try to preserve existing pbRate
+                    if (vid.playbackrate !== undefined) {
+                        pbRate = vid.playbackrate;
+                    }
                     vid.playbackRate = adpbRate;
                     vid.muted = true;
                     // need to reset back to normal speed after the ad
