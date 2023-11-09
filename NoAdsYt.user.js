@@ -4,14 +4,16 @@
 // @version      2.0
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
+// @homepage     https://github.com/di4b0lical/No-ADS-YouTube
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
 // @icon         https://i.ibb.co/X5f50Cg/Screen-Shot-2021-07-19-at-9-31-54-PM.png
 // @grant        none
 // ==/UserScript==
 
-let ogVolume=1;
-let pbRate = 1;
+let pbRate = 2; // I like it fast
+let adpbRate = 2; // was embedded 16, but it didn't go back to pbRate after the ad
+
 
 setInterval(()=>{
     if(document.getElementsByClassName("video-stream html5-main-video")[0]!==undefined){
@@ -39,7 +41,7 @@ setInterval(()=>{
         if(ad!==undefined){
             if(ad.children.length>0){
                 if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
-                    vid.playbackRate=16;vid.muted=true;
+                    vid.playbackRate=adpbRate;vid.muted=true;
                 }
             }
         }
