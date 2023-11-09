@@ -1,12 +1,15 @@
-# No-ADS-YouTube 🥳
+# No-ADS-YouTube 🙅‍♂️⛔
 
-<h3>I would like to welcome all the new comers. Didn't expect to suddenly get traction as I wrote this script 2 years ago, but nonetheless enjoy my shit project 😭😭<br></h3><br><br>
+<h3>I would like to welcome all the new comers. Didn't expect to suddenly get traction as I wrote this script 2 years ago, but nonetheless enjoy my shit project 🙏<br></h3><br><br>
 
 Skips all youtube ads  |  removes banner and sidebar ads | skips ads instantly
 
+Feel free to checkout my Hulu Ads remover (gives you no ads hulu for free): <a href="https://github.com/di4b0lical/NAH-No-Ads-Hulu">NAH - No Ads Hulu 🙅‍♂️</a>
+
 <h3>Steps for use: </h3>
 <ol style="margin-bottom:10px;">
-<li>Install this userscript.</li><br>
+  <li>Install the tampermonkey extension: <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank">Tampermonkey</a></li><br>
+<li>Install this userscript, either copy and paste from the user.js file above or just click this link: <a href="https://github.com/di4b0lical/No-ADS-YouTube/raw/main/NoAdsYt.user.js">NoAdsYt.user.js</a></li><br>
 <li>Open a YouTube video.</li><br>
 <li>Enjoy an AD free YouTube video!</li><br>
 </ol>
