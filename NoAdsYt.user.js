@@ -12,7 +12,8 @@
 // ==/UserScript==
 
 let pbRate = 2; // I like it fast
-let adpbRate = 2; // was embedded 16, but it didn't go back to pbRate after the ad
+let adpbRate = 16;
+let prevVid = undefined;
 
 
 setInterval(()=>{
@@ -38,8 +39,10 @@ setInterval(()=>{
         }
         let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
         if (ad == undefined) {
-            // ??? pbRate = vid.playbackRate;
-            vid.playbackRate = pbRate;
+            // do not repeatedly set the rate -- allows user to manually adjust as desired
+            if (vid !== prevVid || vid.playbackRate == adpbRate) {
+                vid.playbackRate = pbRate;
+            }
         } else {
             if(ad.children.length>0){
                 if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
@@ -57,4 +60,5 @@ setInterval(()=>{
             let rightSideShorts=document.getElementsByTagName("ytd-reel-shelf-renderer")[0];rightSideShorts.remove();
         }
     }
-},100);
+    prevVid = vid;
+}, 100);
