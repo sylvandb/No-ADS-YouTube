@@ -46,7 +46,18 @@ setInterval(()=>{
         } else {
             if(ad.children.length>0){
                 if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
-                    vid.playbackRate=adpbRate;vid.muted=true;
+                    vid.playbackRate = adpbRate;
+                    vid.muted = true;
+                    // need to reset back to normal speed after the ad
+                    // what is the ad length???  adLength = ???
+                    setTimeout(()=>{
+                        vid.playbackRate = pbRate;
+                        // reset it harder
+                        setTimeout(()=>{
+                            vid.playbackRate = pbRate;
+                        }, 500);
+                    // just give it a delay instead of: }, (1000 * adLength + 250.0) / adpbRate);
+                    }, 1000);
                 }
             }
         }
