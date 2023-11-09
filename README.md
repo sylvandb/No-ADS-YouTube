@@ -1,4 +1,5 @@
 # No-ADS-YouTube 🙅‍♂️⛔
+from di4b0lical, modified by sylvandb
 
 <h3>I would like to welcome all the new comers. Didn't expect to suddenly get traction as I wrote this script 2 years ago, but nonetheless enjoy my shit project 🙏<br></h3><br><br>
 
@@ -9,7 +10,7 @@ Feel free to checkout my Hulu Ads remover (gives you no ads hulu for free): <a h
 <h3>Steps for use: </h3>
 <ol style="margin-bottom:10px;">
   <li>Install the tampermonkey extension: <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank">Tampermonkey</a></li><br>
-<li>Install this userscript, either copy and paste from the user.js file above or just click this link: <a href="https://github.com/di4b0lical/No-ADS-YouTube/raw/main/NoAdsYt.user.js">NoAdsYt.user.js</a></li><br>
+<li>Install this userscript, either copy and paste from the user.js file above or just click this link: <a href="https://github.com/sylvandb/No-ADS-YouTube/raw/main/NoAdsYt.user.js">NoAdsYt.user.js</a></li><br>
 <li>Open a YouTube video.</li><br>
 <li>Enjoy an AD free YouTube video!</li><br>
 </ol>
