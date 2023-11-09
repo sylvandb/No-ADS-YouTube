@@ -16,10 +16,8 @@ let adpbRate = 2; // was embedded 16, but it didn't go back to pbRate after the 
 
 
 setInterval(()=>{
-    if(document.getElementsByClassName("video-stream html5-main-video")[0]!==undefined){
-        let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
-        let vid = document.getElementsByClassName("video-stream html5-main-video")[0];
-        if(ad==undefined){pbRate = vid.playbackRate};
+    let vid = document.getElementsByClassName("video-stream html5-main-video")[0];
+    if (vid !== undefined) {
         let closeAble = document.getElementsByClassName("ytp-ad-overlay-close-button");
         for(let i=0;i<closeAble.length;i++){closeAble[i].click()};
         if(document.getElementsByClassName("style-scope ytd-watch-next-secondary-results-renderer sparkles-light-cta GoogleActiveViewElement")[0]!==undefined){
@@ -38,7 +36,11 @@ setInterval(()=>{
         if(document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0]!==undefined){
             document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0].remove();
         }
-        if(ad!==undefined){
+        let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
+        if (ad == undefined) {
+            // ??? pbRate = vid.playbackRate;
+            vid.playbackRate = pbRate;
+        } else {
             if(ad.children.length>0){
                 if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
                     vid.playbackRate=adpbRate;vid.muted=true;
