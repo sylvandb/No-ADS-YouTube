@@ -11,6 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
+let removeLogo = true; // take out the youtube logo
 let pbRate = 2; // I like it fast
 let adpbRate = 16;
 let prevVid = undefined;
@@ -19,6 +20,12 @@ let prevVid = undefined;
 setInterval(()=>{
     let vid = document.getElementsByClassName("video-stream html5-main-video")[0];
     if (vid !== undefined) {
+       if (removeLogo) {
+            let logo = document.getElementsByClassName("ytd-topbar-logo-renderer");
+            if (logo !== undefined && logo[0] !== undefined) {
+                logo[0].remove();
+            }
+        }
         let closeAble = document.getElementsByClassName("ytp-ad-overlay-close-button");
         for(let i=0;i<closeAble.length;i++){closeAble[i].click()};
         if(document.getElementsByClassName("style-scope ytd-watch-next-secondary-results-renderer sparkles-light-cta GoogleActiveViewElement")[0]!==undefined){
