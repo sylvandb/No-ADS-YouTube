@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.1.0
+// @version      2.1.1
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
 // @author       sylvandb
@@ -64,28 +64,27 @@ setInterval(()=>{
             }
         } else {
 //            vid.playbackRate=1.4;
-            if(ad.children.length>0){
+            if(ad.children.length>0) {
                 //vid.playbackRate=1.5;
-                if (vid.playbackRate != adpbRate) { //|| document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0] !== undefined ||
-                   // document.getElementsByClassName("ytp-ad-text ytp-flyout-cta-headline")[0] !== undefined) {
+                if (true || document.querySelector(".ytp-ad-text[class*='ytp-ad-preview-text']") !== undefined) {
                     if (vid.playbackRate != adpbRate) {
-                    // try to preserve existing pbRate
-                    if (vid.playbackRate !== undefined) {
-                        pbRate = vid.playbackRate;
-                    }
-                    vid.playbackRate = adpbRate;
-                    vid.muted = true;
-                    // need to reset back to normal speed after the ad
-                    // what is the ad length???  adLength = ???
-                    setTimeout(()=>{
-                        vid.playbackRate = pbRate;
-                        // reset it harder
+                        // try to preserve existing pbRate
+                        if (vid.playbackRate !== undefined) {
+                            pbRate = vid.playbackRate;
+                        }
+                        vid.playbackRate = adpbRate;
+                        vid.muted = true;
+                        // need to reset back to normal speed after the ad
+                        // what is the ad length???  adLength = ???
                         setTimeout(()=>{
                             vid.playbackRate = pbRate;
-                        }, 250);
-                    // just give it a delay instead of: }, (1000 * adLength + 250.0) / adpbRate);
-                    }, 1000);
-                }
+                            // reset it harder
+                            setTimeout(()=>{
+                                vid.playbackRate = pbRate;
+                            }, 250);
+                        // just give it a delay instead of: }, (1000 * adLength + 250.0) / adpbRate);
+                        }, 1000);
+                    }
                 }
             }
         }
