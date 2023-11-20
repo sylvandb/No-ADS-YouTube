@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.0.2
+// @version      2.1.0
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
 // @author       sylvandb
@@ -46,18 +46,32 @@ setInterval(()=>{
         if(document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0]!==undefined){
             document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0].remove();
         }
+        if(document.getElementById("masthead-ad")!==null){
+            let headerAd=document.getElementById("masthead-ad");headerAd.remove();
+        }
+        if(document.getElementsByTagName("ytd-ad-slot-renderer")[0]!==undefined){
+            let rightSideAd=document.getElementsByTagName("ytd-ad-slot-renderer")[0];rightSideAd.remove();
+        }
+        if(document.getElementsByTagName("ytd-reel-shelf-renderer")[0]!==undefined){
+            let rightSideShorts=document.getElementsByTagName("ytd-reel-shelf-renderer")[0];rightSideShorts.remove();
+        }
         let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
         if (ad == undefined) {
+            //vid.playbackRate=1.3;
             // do not repeatedly set the rate -- allows user to manually adjust as desired
             if (vid !== prevVid || vid.playbackRate == adpbRate) {
                 vid.playbackRate = pbRate;
             }
         } else {
+//            vid.playbackRate=1.4;
             if(ad.children.length>0){
-                if(document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0]!==undefined){
+                //vid.playbackRate=1.5;
+                if (vid.playbackRate != adpbRate) { //|| document.getElementsByClassName("ytp-ad-text ytp-ad-preview-text")[0] !== undefined ||
+                   // document.getElementsByClassName("ytp-ad-text ytp-flyout-cta-headline")[0] !== undefined) {
+                    if (vid.playbackRate != adpbRate) {
                     // try to preserve existing pbRate
-                    if (vid.playbackrate !== undefined) {
-                        pbRate = vid.playbackrate;
+                    if (vid.playbackRate !== undefined) {
+                        pbRate = vid.playbackRate;
                     }
                     vid.playbackRate = adpbRate;
                     vid.muted = true;
@@ -68,20 +82,12 @@ setInterval(()=>{
                         // reset it harder
                         setTimeout(()=>{
                             vid.playbackRate = pbRate;
-                        }, 500);
+                        }, 250);
                     // just give it a delay instead of: }, (1000 * adLength + 250.0) / adpbRate);
                     }, 1000);
                 }
+                }
             }
-        }
-        if(document.getElementById("masthead-ad")!==null){
-            let headerAd=document.getElementById("masthead-ad");headerAd.remove();
-        }
-        if(document.getElementsByTagName("ytd-ad-slot-renderer")[0]!==undefined){
-            let rightSideAd=document.getElementsByTagName("ytd-ad-slot-renderer")[0];rightSideAd.remove();
-        }
-        if(document.getElementsByTagName("ytd-reel-shelf-renderer")[0]!==undefined){
-            let rightSideShorts=document.getElementsByTagName("ytd-reel-shelf-renderer")[0];rightSideShorts.remove();
         }
     }
     prevVid = vid;
