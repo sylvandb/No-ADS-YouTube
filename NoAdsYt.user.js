@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.1.1
+// @version      2.1.2
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
 // @author       sylvandb
@@ -22,39 +22,67 @@ let prevVid = undefined;
 setInterval(()=>{
     let vid = document.getElementsByClassName("video-stream html5-main-video")[0];
     if (vid !== undefined) {
-       if (removeLogo) {
+        /* things to click */
+        /* overlay ads w/close button */
+        let closeAble = document.getElementsByClassName("ytp-ad-overlay-close-button");
+        for(let i=0;i<closeAble.length;i++){closeAble[i].click()};
+        /* video ads w/skip button */
+        let skipBtn = document.getElementsByClassName("ytp-ad-text ytp-ad-skip-button-text")[0];
+        if (skipBtn === undefined) {
+            skipBtn = document.getElementsByClassName("ytp-skip-ad-button ytp-skip-ad-button--new--pos")[0];
+        }
+        if (skipBtn === undefined) {
+            skipBtn = document.getElementById("skip-button:l8");
+        }
+        if (skipBtn !== undefined && skipBtn) {
+            skipBtn.click();
+        }
+        /* things to display=none */
+        if(document.getElementsByClassName("style-scope ytd-watch-next-secondary-results-renderer sparkles-light-cta GoogleActiveViewElement")[0]!==undefined){
+            let sideAd = document.getElementsByClassName("style-scope ytd-watch-next-secondary-results-renderer sparkles-light-cta GoogleActiveViewElement")[0];
+            sideAd.style.display="none";
+        }
+        if(document.getElementsByClassName("style-scope ytd-item-section-renderer sparkles-light-cta")[0]!==undefined){
+            let sideAd_ = document.getElementsByClassName("style-scope ytd-item-section-renderer sparkles-light-cta")[0];
+            sideAd_.style.display="none";
+        }
+        /* incoming ad */
+        if(document.getElementsByClassName("ytp-ad-message-container")[0]!==undefined){
+            let incomingAd = document.getElementsByClassName("ytp-ad-message-container")[0];
+            incomingAd.style.display="none";
+        }
+        /* classes to remove */
+        /* logo incl funky ones */
+        if (removeLogo) {
             let logo = document.getElementsByClassName("ytd-topbar-logo-renderer");
             if (logo !== undefined && logo[0] !== undefined) {
                 logo[0].remove();
             }
-        }
-        let closeAble = document.getElementsByClassName("ytp-ad-overlay-close-button");
-        for(let i=0;i<closeAble.length;i++){closeAble[i].click()};
-        if(document.getElementsByClassName("style-scope ytd-watch-next-secondary-results-renderer sparkles-light-cta GoogleActiveViewElement")[0]!==undefined){
-            let sideAd=document.getElementsByClassName("style-scope ytd-watch-next-secondary-results-renderer sparkles-light-cta GoogleActiveViewElement")[0];
-            sideAd.style.display="none";
-        }
-        if(document.getElementsByClassName("style-scope ytd-item-section-renderer sparkles-light-cta")[0]!==undefined){
-            let sideAd_ = document.getElementsByClassName("style-scope ytd-item-section-renderer sparkles-light-cta")[0];sideAd_.style.display="none";
-        }
-        if(document.getElementsByClassName("ytp-ad-text ytp-ad-skip-button-text")[0]!==undefined){
-            let skipBtn=document.getElementsByClassName("ytp-ad-text ytp-ad-skip-button-text")[0];skipBtn.click();
-        }
-        if(document.getElementsByClassName("ytp-ad-message-container")[0]!==undefined){
-            let incomingAd=document.getElementsByClassName("ytp-ad-message-container")[0];incomingAd.style.display="none";
-        }
+         }
+        /* side ad */
         if(document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0]!==undefined){
             document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0].remove();
         }
+        /* element Ids to remove */
+        /* header ad */
         if(document.getElementById("masthead-ad")!==null){
-            let headerAd=document.getElementById("masthead-ad");headerAd.remove();
+            document.getElementById("masthead-ad").remove();
         }
+        /* right side ad -- maybe hide? */
+        if (document.getElementById("engagement-panel-ads") !== null) {
+            document.getElementById("engagement-panel-ads").remove();
+        }
+        /* element tags to remove
+        /* right side ad */
         if(document.getElementsByTagName("ytd-ad-slot-renderer")[0]!==undefined){
-            let rightSideAd=document.getElementsByTagName("ytd-ad-slot-renderer")[0];rightSideAd.remove();
+            document.getElementsByTagName("ytd-ad-slot-renderer")[0].remove();
         }
+        /* right side shorts */
         if(document.getElementsByTagName("ytd-reel-shelf-renderer")[0]!==undefined){
-            let rightSideShorts=document.getElementsByTagName("ytd-reel-shelf-renderer")[0];rightSideShorts.remove();
+            document.getElementsByTagName("ytd-reel-shelf-renderer")[0].remove();
         }
+
+        /* video ads */
         let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
         if (ad == undefined) {
             //vid.playbackRate=1.3;
