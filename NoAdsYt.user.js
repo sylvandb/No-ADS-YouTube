@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.1.2
+// @version      2.1.3
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
 // @author       sylvandb
@@ -64,6 +64,10 @@ setInterval(()=>{
             document.getElementsByClassName("style-scope ytd-companion-slot-renderer")[0].remove();
         }
         /* element Ids to remove */
+        /* clarify-box aka Context is a horribly misplaced attempt to discredit videos google considers a controversial topic */
+        if(document.getElementById("clarify-box")!==null){
+            document.getElementById("clarify-box").remove();
+        }
         /* header ad */
         if(document.getElementById("masthead-ad")!==null){
             document.getElementById("masthead-ad").remove();
