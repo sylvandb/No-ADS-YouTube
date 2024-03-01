@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.1.5
+// @version      2.1.6
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
 // @author       sylvandb
@@ -91,6 +91,14 @@ setInterval(() => {
 
         /* fast-forward video ads w/no skip button, skip button handled already */
         let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
+/* breaks (mutes and speeds) shorts
+        if (ad == undefined) {
+            ad = document.getElementsByClassName("ytp-ad-persistent-progress-bar-container")[0];
+        }
+*/
+        if (ad == undefined) {
+            ad = document.getElementsByClassName("ytp-ad-persistent-progress-bar")[0];
+        }
         if (ad == undefined) {
             //vid.playbackRate=1.3;
             // do not repeatedly set the rate -- allows user to manually adjust as desired
