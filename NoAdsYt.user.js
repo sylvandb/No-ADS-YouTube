@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No ADS - YouTube
 // @namespace    http://tampermonkey.net/
-// @version      2.1.3
+// @version      2.1.4
 // @description  - Skips all youtube ads - | - undetectable - | - skips ads instantly -
 // @author       GSRHaX
 // @author       sylvandb
@@ -75,6 +75,9 @@ setInterval(()=>{
         /* right side ad -- maybe hide? */
         if (document.getElementById("engagement-panel-ads") !== null) {
             document.getElementById("engagement-panel-ads").remove();
+        }
+        if (document.getElementById("panels") !== null) {
+            document.getElementById("panels").remove();
         }
         /* element tags to remove
         /* right side ad */
